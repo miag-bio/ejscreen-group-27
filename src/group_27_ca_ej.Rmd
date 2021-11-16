@@ -21,9 +21,11 @@ ces <- read.csv(here("data", "ces3demographics.csv")) %>%
   clean_names()
 ```
 
-# Sarah creating a geom_point gg plot.
+# Sarah creating a geom_point gg plot, Mia changed it to a hexbin plot and updated axes
 ```{r}
 ggplot(data = ces, aes(x = white, y= ces_3_0_score))+
-  geom_point()
+  geom_hex() +
+  labs(x = "Percentage of population that is white",
+       y = "CES 3.0 score")
 ```
 
