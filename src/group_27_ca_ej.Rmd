@@ -1,0 +1,23 @@
+---
+title: "Group 27 CA pollution burden"
+author: "Mia Guarnieri, Sarah Rohlfing"
+date: "11/15/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+#attaching packages
+library(tidyverse)
+library(here)
+library(janitor)
+```
+
+# Reading in the data
+
+```{r}
+ces <- read.csv(here("data", "ces3demographics.csv")) %>% 
+  clean_names()
+```
+
