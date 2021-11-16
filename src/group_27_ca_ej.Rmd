@@ -44,4 +44,4 @@ This graph shows a negative trend which suggests that communities with a higher 
 
 ### Citation
 
-“CalEnviroScreen 3.0.” Oehha.ca.gov, 25 June 2018, https://oehha.ca.gov/calenviroscreen/report/calenviroscreen-30. 
+California Office of Environmental Health Hazard Assessment. 2018. “CalEnviroScreen 3.0.” Oehha.ca.gov, 25 June 2018, https://oehha.ca.gov/calenviroscreen/report/calenviroscreen-30. 
