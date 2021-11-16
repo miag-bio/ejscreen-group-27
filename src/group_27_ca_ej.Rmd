@@ -42,3 +42,6 @@ ggplot(data = ces, aes(x = white, y= ces_3_0_score))+
 
 This graph shows a negative trend which suggests that communities with a higher percentage of white citizens have lower CES 3.0 scores. This means that higher, more harmful pollution levels occur in more vulnerable communities with larger minority populations. 
 
+### Citation
+
+“CalEnviroScreen 3.0.” Oehha.ca.gov, 25 June 2018, https://oehha.ca.gov/calenviroscreen/report/calenviroscreen-30. 
