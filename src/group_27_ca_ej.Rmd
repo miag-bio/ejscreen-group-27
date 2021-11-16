@@ -38,4 +38,5 @@ ggplot(data = ces, aes(x = white, y= ces_3_0_score))+
 
 ### Takeaway
 
+This graph shows a negative trend that communities with higher percentage of white population have lower CES 3.0 scores. This means that higher, harmful pollution levels occur in communities with higher percentages of minorities.  
 
