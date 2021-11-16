@@ -25,6 +25,8 @@ ces <- read.csv(here("data", "ces3demographics.csv")) %>%
 ```{r}
 ggplot(data = ces, aes(x = white, y= ces_3_0_score))+
   geom_hex() +
+  scale_fill_gradient(low = "darkseagreen1", high = "darkseagreen4")+
+  theme_minimal()+
   labs(x = "Percentage of population that is white",
        y = "CES 3.0 score")
 ```
