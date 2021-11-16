@@ -6,7 +6,7 @@ output: html_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = FALSE, results = TRUE, warning = FALSE, message = FALSE)
 
 #attaching packages
 library(tidyverse)
@@ -14,20 +14,28 @@ library(here)
 library(janitor)
 ```
 
-# Reading in the data
+### Overview
+
+This graph visualizes pollution levels as related to the percentage of an area's population that is white for California counties. Data was obtained from the CalEnviroScreen 3.0 (or CES 3.0), the most recent version of the California Communities Environmental Health Screening Tool. This place-based cumulative impact screening methodology was created by the Office of Environmental Health Hazard Assessment (OEHHA) at the California Environmental Protection Agency (CalEPA). Per the California Environmental Justice Alliance guidelines,  Communities with high total CES 3.0 scores have high cumulative pollution burdens and highly vulnerable population characteristics that cause pollutants to become more deadly.
 
 ```{r}
+# Reading in the data
 ces <- read.csv(here("data", "ces3demographics.csv")) %>% 
   clean_names()
 ```
 
-# Sarah creating a geom_point gg plot, Mia changed it to a hexbin plot and updated axes
+### Creating a hexplot to visualize pollution vs. white population in California counties
+
 ```{r}
 ggplot(data = ces, aes(x = white, y= ces_3_0_score))+
   geom_hex() +
-  scale_fill_gradient(low = "darkseagreen1", high = "darkseagreen4")+
+  scale_fill_gradient(low = "darkseagreen1", high = "grey30")+
   theme_minimal()+
   labs(x = "Percentage of population that is white",
-       y = "CES 3.0 score")
+       y = "CES 3.0 score",
+       caption = str_wrap("Gradient of CES 3.0 pollution scores by white population percentage. Data: Office of Environmental Health Hazard Assessment, California Environmental Protection Agency"))
 ```
+
+### Takeaway
+
 
