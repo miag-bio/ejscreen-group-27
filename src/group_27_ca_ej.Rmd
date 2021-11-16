@@ -16,15 +16,17 @@ library(janitor)
 
 ### Overview
 
-This graph visualizes pollution levels as related to the percentage of an area's population that is white for California counties. Data was obtained from the CalEnviroScreen 3.0 (or CES 3.0), the most recent version of the California Communities Environmental Health Screening Tool. This place-based cumulative impact screening methodology was created by the Office of Environmental Health Hazard Assessment (OEHHA) at the California Environmental Protection Agency (CalEPA). Per the California Environmental Justice Alliance guidelines,  Communities with high total CES 3.0 scores have high cumulative pollution burdens and highly vulnerable population characteristics that cause pollutants to become more deadly.
+This data visualization examines pollution levels as related to the percentage of a California county's population that is white. Data was obtained from the CalEnviroScreen 3.0 (or CES 3.0), which is the most recent version of the California Communities Environmental Health Screening Tool - a cumulative impact screening methodology created by the Office of Environmental Health Hazard Assessment at the California Environmental Protection Agency. Per the California Environmental Justice Alliance guidelines, communities with high total CES 3.0 scores have high cumulative pollution burdens and highly vulnerable population characteristics that cause pollutants to become more deadly.
 
 ```{r}
-# Reading in the data
+# Reading in the data and cleaning up column headers
 ces <- read.csv(here("data", "ces3demographics.csv")) %>% 
   clean_names()
 ```
 
 ### Creating a hexplot to visualize pollution vs. white population in California counties
+
+This basic hexplot (density plot) visualizes CES 3.0 scores as they related to the percentage of the county population that is white. Color corresponds to the density of observations.
 
 ```{r}
 ggplot(data = ces, aes(x = white, y= ces_3_0_score))+
@@ -38,5 +40,5 @@ ggplot(data = ces, aes(x = white, y= ces_3_0_score))+
 
 ### Takeaway
 
-This graph shows a negative trend that communities with higher percentage of white population have lower CES 3.0 scores. This means that higher, harmful pollution levels occur in communities with higher percentages of minorities.  
+This graph shows a negative trend which suggests that communities with a higher percentage of white citizens have lower CES 3.0 scores. This means that higher, more harmful pollution levels occur in more vulnerable communities with larger minority populations. 
 
