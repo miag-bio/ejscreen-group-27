@@ -24,7 +24,7 @@ ces <- read.csv(here("data", "ces3demographics.csv")) %>%
   clean_names()
 ```
 
-### Creating a hexplot to visualize pollution vs. white population in California counties
+### Visualizing pollution vs. white population in California counties
 
 This basic hexplot (density plot) visualizes CES 3.0 scores as they related to the percentage of the county population that is white. Color corresponds to the density of observations.
 
@@ -35,12 +35,12 @@ ggplot(data = ces, aes(x = white, y= ces_3_0_score))+
   theme_minimal()+
   labs(x = "Percentage of population that is white",
        y = "CES 3.0 score",
-       caption = str_wrap("Gradient of CES 3.0 pollution scores by white population percentage. Data: Office of Environmental Health Hazard Assessment, California Environmental Protection Agency"))
+       caption = str_wrap("Gradient of CES 3.0 pollution scores by white population percentage. Darker colors indicate a higher density of observations. Data: Office of Environmental Health Hazard Assessment, California Environmental Protection Agency"))
 ```
 
 ### Takeaway
 
-This graph shows a negative trend which suggests that communities with a higher percentage of white citizens have lower CES 3.0 scores. This means that higher, more harmful pollution levels occur in more vulnerable communities with larger minority populations. 
+This graph shows a negative trend which suggests that communities with a higher percentage of white citizens generally have lower CES 3.0 scores. This means that higher, more harmful pollution levels (indicated by higher CES 3.0 scores) tend to occur in more vulnerable communities with larger minority populations. 
 
 ### Citation
 
